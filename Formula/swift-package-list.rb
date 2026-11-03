@@ -5,6 +5,11 @@ class SwiftPackageList < Formula
   sha256 "98b5b8d13e05cb07d1e3afda3f87f4e0e6e64021aea2632f8b3f9e13386dde73"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   def install
     bin.install "swift-package-list"
     generate_completions_from_executable(bin/"swift-package-list", "--generate-completion-script")
