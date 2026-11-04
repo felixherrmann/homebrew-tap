@@ -1,0 +1,32 @@
+name: Update Formulae
+
+on:
+  schedule:
+    # Every three hours at 01:45, 04:45, ... UTC, like Homebrew core.
+    - cron: '45 1-23/3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-formulae
+  cancel-in-progress: false
+
+jobs:
+  autobump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Homebrew and this tap
+        uses: Homebrew/actions/setup-homebrew@2026.09.07.1
+        with:
+          stable: true
+      - name: Configure Git user
+        uses: Homebrew/actions/git-user-config@2026.09.07.1
+        with:
+          username: github-actions[bot]
+      - name: Bump formulas
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+        run: brew bump --full-name --no-fork --open-pr --formulae --tap=felixherrmann/tap
