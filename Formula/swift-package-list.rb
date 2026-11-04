@@ -12,6 +12,7 @@ class SwiftPackageList < Formula
 
   def install
     bin.install "swift-package-list"
+    man1.install "swift-package-list.1"
     generate_completions_from_executable(bin/"swift-package-list", "--generate-completion-script")
   end
 
