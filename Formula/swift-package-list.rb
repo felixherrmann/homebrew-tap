@@ -1,8 +1,8 @@
 class SwiftPackageList < Formula
   desc "A command-line tool to list Swift package dependencies and generate acknowledgments."
   homepage "https://github.com/felixherrmann/swift-package-list"
-  url "https://github.com/felixherrmann/swift-package-list/releases/download/4.12.0/swift-package-list.tar.gz"
-  sha256 "98b5b8d13e05cb07d1e3afda3f87f4e0e6e64021aea2632f8b3f9e13386dde73"
+  url "https://github.com/felixherrmann/swift-package-list/releases/download/5.0.0/swift-package-list.tar.gz"
+  sha256 "813fd6b546ad7a59b8be0a3f77892aab0eb4fcb0537bf15390f578a81caff9b5"
   license "MIT"
 
   livecheck do
