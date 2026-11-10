@@ -19,11 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Homebrew and this tap
-        uses: Homebrew/actions/setup-homebrew@2026.11.02.1
+        uses: Homebrew/actions/setup-homebrew@2026.11.09.1
         with:
           stable: true
       - name: Configure Git user
-        uses: Homebrew/actions/git-user-config@2026.11.02.1
+        uses: Homebrew/actions/git-user-config@2026.11.09.1
         with:
           username: github-actions[bot]
       - name: Bump formulas
